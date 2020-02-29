@@ -2,9 +2,12 @@ package com.itheima.health.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.itheima.health.dao.RoleDao;
+import com.itheima.health.pojo.Role;
 import com.itheima.health.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * @ClassName RoleServiceImpl
@@ -21,4 +24,13 @@ public class RoleServiceImpl implements RoleService {
     @Autowired
     RoleDao roleDao;
 
+    /**
+     * 查询所有角色
+     * @return
+     */
+    @Override
+    public List<Role> findAll() {
+        List<Role> list = roleDao.findAll();
+        return list;
+    }
 }

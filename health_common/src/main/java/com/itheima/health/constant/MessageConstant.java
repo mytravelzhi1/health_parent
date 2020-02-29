@@ -69,9 +69,20 @@ public class MessageConstant {
     public static final String GET_BUSINESS_REPORT_FAIL = "获取运营统计数据失败";
     public static final String GET_SETMEAL_LIST_SUCCESS = "查询套餐列表数据成功";
     public static final String GET_SETMEAL_LIST_FAIL = "查询套餐列表数据失败";
+    public static final String QUERY_ROLE_SUCCESS = "查询角色成功";
+    public static final String QUERY_ROLE_FAIL = "查询角色失败";
+    public static final String QUERY_USER_SUCCESS = "查询角色成功";
+    public static final String QUERY_USER_FAIL = "查询用户失败";
+    public static final String ADD_USER_SUCCESS = "新增用户成功";
+    public static final String ADD_USER_FAIL = "新增用户失败";
+    public static final String EDIT_USER_SUCCESS = "编辑用户成功";
+    public static final String EDIT_USER_FAIL = "编辑用户失败";
+    public static final String DELETE_USER_SUCCESS = "删除用户成功";
+    public static final String DELETE_USER_FAIL = "删除用户失败";
 
     public static final String GET_CHECKITEMANDCHECKGROUPERROR = "当前检查项和检查组之间存在关联关系，此时不能删除！";
     public static final String GET_CHECKGROUPANDCHECKITEMERROR = "当前检查组和检查项存在关联关系，不能进行删除！";
     public static final String GET_CHECKGROUPANDSETMEALERROR = "当前检查组和套餐存在关联关系，不能进行删除！";
     public static final String GET_SETMEALANDCHECKGROUPERROR = "当前套餐和检查组存在关联关系，不能进行删除！";
+    public static final String GET_USERANDROLEERROR = "当前用户和角色存在关联关系，不能进行删除！";
 }

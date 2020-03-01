@@ -59,11 +59,11 @@
                         <el-submenu v-for="menu in menuList" :index="menu.path">
                             <template slot="title">
                                 <i class="fa" :class="menu.icon"></i>
-                                {{menu.title}}
+                                {{menu.name}}
                             </template>
                             <template v-for="child in menu.children">
                                 <el-menu-item :index="child.path">
-                                    <a :href="child.linkUrl" target="right">{{child.title}}</a>
+                                    <a :href="child.linkUrl" target="right">{{child.name}}</a>
                                 </el-menu-item>
                             </template>
                         </el-submenu>
@@ -88,7 +88,7 @@
         data:{
             username:"",
             menuList:[
-                {
+                /*{
                     "path": "1",
                     "title": "工作台",
                     "icon":"fa-dashboard",
@@ -223,7 +223,7 @@
                             "children": []
                         }
                     ]
-                }
+                }*/
             ]
         },
         // 使用钩子函数，初始化用户名
@@ -232,7 +232,15 @@
                 // 返回Result(flag,message,data)  data对应用户名的信息
                 this.username = response.data.data;
             }).catch((error)=>{
+            })
+        },
+        mounted:function () {
+            //初始化菜单
+            axios.get("/menu/findMenus.do").then((res)=>{
 
+                if (res.data.flag) {
+                    this.menuList=res.data.data;
+                }
             })
         }
     });

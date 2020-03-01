@@ -220,11 +220,7 @@
             //初始化菜单
             axios.get("/menu/findMenus.do").then((res)=>{
 
-
-
                 if (res.data.flag) {
-                    console.log(res);
-                    alert(res);
                     this.menuList=res.data.data;
                 }
             })

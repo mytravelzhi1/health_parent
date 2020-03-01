@@ -17,5 +17,5 @@ public interface RoleDao {
      */
     List<Role> findAll();
 
-    Integer findRolesByUsername(String username);
+    List<Integer> findRolesByUsername(String username);
 }

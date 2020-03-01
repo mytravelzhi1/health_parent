@@ -30,10 +30,10 @@ public class MenuServiceImpl implements MenuService {
     public List<Menu> findMenus(String username) {
 
         //根据用户 查询,获得当前用户的角色id
-        Integer roleId = roleDao.findRolesByUsername(username);
+        List<Integer> roleIdList = roleDao.findRolesByUsername(username);
 
         //根据角色id 查询关联的菜单项
-        List<Menu> menuList=menuDao.findMenusByRoleId(roleId);
+        List<Menu> menuList=menuDao.findMenusByRoleId(roleIdList);
 
         //定义返回的menu
         List<Menu> resultList= new ArrayList<>();
@@ -57,8 +57,6 @@ public class MenuServiceImpl implements MenuService {
 
             }
         }
-        System.out.println(resultList);
-        System.out.println(1);
         return resultList;
     }
 }

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- 页面meta -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>传智健康</title>
+        <meta name="description" content="传智健康">
+        <meta name="keywords" content="传智健康">
+        <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+        <!-- 引入样式 -->
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="../js/echarts.js"></script>
+        <!-- import CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    </head>
+    <body class="hold-transition">
+        <div id="app">
+            <div class="content-header">
+                <h1>统计分析<small>会员数量</small></h1>
+                <el-breadcrumb separator-class="el-icon-arrow-right" class="breadcrumb">
+                    <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+                    <el-breadcrumb-item>统计分析</el-breadcrumb-item>
+                    <el-breadcrumb-item>会员数量</el-breadcrumb-item>
+                </el-breadcrumb>
+            </div>
+            <div class="app-container">
+                <div class="box">
+                    <div  class="block" align="center" style="margin: 15px ">
+                        <div style="margin-top: 20px">
+                        <span>根据日期查询：</span>
+                        <el-date-picker
+                                v-model ="value2"
+                                type="daterange"
+                                align="right"
+                                unlink-panels
+                                range-separator="至"
+                                start-placeholder="开始日期"
+                                end-placeholder="结束日期"
+                                :picker-options="pickerOptions"
+                                @change="dateChange(value2)">
+                        </el-date-picker>
+                            <span align="right">查询显示模式：</span>
+                            <el-radio-group v-model="radio1" size="medium" @change="radioChange(radio1)">
+                                <el-radio-button  label="默认" ></el-radio-button>
+                                <el-radio-button  label="年"></el-radio-button>
+                                <el-radio-button  label="月"></el-radio-button>
+                                <el-radio-button  label="周"></el-radio-button>
+                                <el-radio-button  label="日"></el-radio-button>
+                            </el-radio-group>
+                        </div>
+                    </div>
+                    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+                    <div id="chart1" style="height:600px;"></div>
+                </div>
+            </div>
+
+
+        </div>
+    </body>
+    <!-- 引入组件库 -->
+    <script src="../js/vue.js"></script>
+    <script src="../plugins/elementui/index.js"></script>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script src="../js/axios-0.18.0.js"></script>
+    <script type="text/javascript">
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    radio1: '默认',
+                    pickerOptions: {
+                        shortcuts: [{
+                            text: '最近一周',
+                            onClick(picker) {
+                                const end = new Date();
+                                const start = new Date();
+                                start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
+                                picker.$emit('pick', [start, end]);
+                            }
+                        }, {
+                            text: '最近一个月',
+                            onClick(picker) {
+                                const end = new Date();
+                                const start = new Date();
+                                start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
+                                picker.$emit('pick', [start, end]);
+                            }
+                        }, {
+                            text: '最近三个月',
+                            onClick(picker) {
+                                const end = new Date();
+                                const start = new Date();
+                                start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
+                                picker.$emit('pick', [start, end]);
+                            }
+                        },{
+                            text: '最近半年',
+                            onClick(picker) {
+                                const end = new Date();
+                                const start = new Date();
+                                start.setTime(start.getTime() - 3600 * 1000 * 24 * 180);
+                                picker.$emit('pick', [start, end]);
+                            }
+                        },{
+                            text: '最近一年',
+                            onClick(picker) {
+                                const end = new Date();
+                                const start = new Date();
+                                start.setTime(start.getTime() - 3600 * 1000 * 24 * 365);
+                                picker.$emit('pick', [start, end]);
+                            }
+                        },{
+                            text: '最近三年',
+                            onClick(picker) {
+                                const end = new Date();
+                                const start = new Date();
+                                start.setTime(start.getTime() - 3600 * 1000 * 24 * 365 * 3);
+                                picker.$emit('pick', [start, end]);
+                            }
+                        }
+                        ]
+                    },dateChange(value){
+                        //alert(value);
+                        axios.post("/report/getMemberReportByDate.do",value).then((res)=>{
+
+                            //alert(value);
+                            myChart1.setOption(
+                                {
+                                    title: {
+                                        text: '会员数量'
+                                    },
+                                    tooltip: {},
+                                    legend: {
+                                        data:['会员数量']
+                                    },
+                                    xAxis: {
+                                        data: res.data.data.months
+                                    },
+                                    yAxis: {
+                                        type:'value'
+                                    },
+                                    series: [{
+                                        name: '会员数量',
+                                        type: 'line',
+                                        data: res.data.data.memberCount
+                                    }]
+                                });
+                            if (value.length>2){
+                                this.clear();
+                            }
+                        });
+
+
+                    },radioChange(time){
+                        var v = this.value2;
+
+                        if (time ==='年'){
+                            v.push("year");
+                            this.dateChange(v);
+
+                        }
+                        if (time ==='月'){
+                            v.push("month");
+                            this.dateChange(v);
+                        }
+                        if (time ==='日'){
+                            v.push("day");
+                            this.dateChange(v);
+                        }
+                        if (time ==='默认'){
+                            v.push("default");
+                            this.dateChange(v);
+                        }
+                        if (time ==='周'){
+                            v.push("week");
+                            this.dateChange(v);
+                        }
+
+                    },clear(mode){
+                      this.value2.pop();
+
+                    },
+                    value2: '',
+                    radio1:'默认'
+                    };
+            }
+        });
+
+        // 基于准备好的dom，初始化echarts实例
+        var myChart1 = echarts.init(document.getElementById('chart1'));
+
+        // 使用刚指定的配置项和数据显示图表。
+        //myChart.setOption(option);
+
+        axios.get("/report/getMemberReport.do").then((res)=>{
+            myChart1.setOption(
+                                {
+                                    title: {
+                                        text: '会员数量'
+                                    },
+                                    tooltip: {},
+                                    legend: {
+                                        data:['会员数量']
+                                    },
+                                    xAxis: {
+                                        data: res.data.data.months
+                                    },
+                                    yAxis: {
+                                        type:'value'
+                                    },
+                                    series: [{
+                                        name: '会员数量',
+                                        type: 'line',
+                                        data: res.data.data.memberCount
+                                    }]
+                                });
+
+        });
+    </script>
+</html>

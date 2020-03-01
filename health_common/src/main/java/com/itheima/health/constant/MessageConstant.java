@@ -79,10 +79,19 @@ public class MessageConstant {
     public static final String EDIT_USER_FAIL = "编辑用户失败";
     public static final String DELETE_USER_SUCCESS = "删除用户成功";
     public static final String DELETE_USER_FAIL = "删除用户失败";
+    public static final String DELETE_PERMISSION_FAIL = "删除权限失败";
+    public static final String DELETE_PERMISSION_SUCCESS = "删除权限成功";
+    public static final String ADD_PERMISSION_SUCCESS = "新增权限成功";
+    public static final String ADD_PERMISSION_FAIL = "新增权限失败";
+    public static final String EDIT_PERMISSION_FAIL = "编辑权限失败";
+    public static final String EDIT_PERMISSION_SUCCESS = "编辑权限成功";
+    public static final String QUERY_PERMISSION_SUCCESS = "查询权限成功";
+    public static final String QUERY_PERMISSION_FAIL = "查询权限失败";
 
     public static final String GET_CHECKITEMANDCHECKGROUPERROR = "当前检查项和检查组之间存在关联关系，此时不能删除！";
     public static final String GET_CHECKGROUPANDCHECKITEMERROR = "当前检查组和检查项存在关联关系，不能进行删除！";
     public static final String GET_CHECKGROUPANDSETMEALERROR = "当前检查组和套餐存在关联关系，不能进行删除！";
     public static final String GET_SETMEALANDCHECKGROUPERROR = "当前套餐和检查组存在关联关系，不能进行删除！";
     public static final String GET_USERANDROLEERROR = "当前用户和角色存在关联关系，不能进行删除！";
+    public static final String GET_PERMISSIONANDROLEERROR="当前权限与角色存在关联关系,不能进行删除！";
 }

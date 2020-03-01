@@ -13,7 +13,8 @@
         <selectKey resultType="int" order="AFTER" keyProperty="id">
             select last_insert_id()
         </selectKey>
-        INSERT INTO t_member(fileNumber,name,sex,idCard,phoneNumber,regTime,password,email,birthday,remark) VALUES(#{fileNumber},#{name},#{sex},#{idCard},#{phoneNumber},#{regTime},#{password},#{email},#{birthday},#{remark})
+        INSERT INTO t_member(fileNumber,name,sex,idCard,phoneNumber,regTime,password,email,birthday,remark)
+        VALUES(#{fileNumber},#{name},#{sex},#{idCard},#{phoneNumber},#{regTime},#{password},#{email},#{birthday},#{remark})
     </insert>
 
     <!--统计分析-根据注册时间统计会员的数量
@@ -40,4 +41,13 @@
     <select id="findThisWeekAndMonthNewMember" parameterType="string" resultType="int">
         SELECT COUNT(id) FROM t_member WHERE regTime >= #{date}
     </select>
+
+    <!--使用注册时间查询对应时间之前的会员人数统计在xml中，有些特殊符号需要转义 < &lt;> &gt;& &amp; -->
+    <select resultType="int" parameterType="string" id="findMemberCountByRegTime">SELECT COUNT(id) FROM t_member WHERE
+        regTime &lt;= #{regTime}
+    </select>
+
+    <!--根据日期查-->
+    <select resultType="int" parameterType="string"
+            id="findMemberCountByDays">SELECT COUNT(id) FROM t_member WHERE regTime = #{day} </select>
 </mapper>

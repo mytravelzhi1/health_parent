@@ -54,4 +54,49 @@ public class MemberServiceImpl implements MemberService {
         }
         return memberCount;
     }
+
+    @Override
+    public List<Integer> findMemberCountByList(List<String> list, String mode) {
+        if (mode.equals("month")){
+            // 组织查询结果
+            List<Integer> memberCountList = new ArrayList<>();
+            for (String month : list) {
+                String regTime = month+"-31"; // 已知当前月，查询当前月的最后1天
+                Integer memberCount = memberDao.findMemberCountByRegTime(regTime);
+                memberCountList.add(memberCount);
+            }
+            return memberCountList;
+        }
+        if (mode.equals("day")){
+            // 组织查询结果
+            List<Integer> memberCountList = new ArrayList<>();
+            for (String day : list)  {
+                Integer memberCount = memberDao.findMemberCountByDays(day);
+                memberCountList.add(memberCount);
+            }
+            return memberCountList;
+        }
+
+        if (mode.equals("week")){
+            // 组织查询结果
+            List<Integer> memberCountList = new ArrayList<>();
+            for (String day : list)  {
+                Integer memberCount = memberDao.findMemberCountByRegTime(day);
+                memberCountList.add(memberCount);
+            }
+            return memberCountList;
+        }
+
+        if (mode.equals("year")){
+            // 组织查询结果
+            List<Integer> memberCountList = new ArrayList<>();
+            for (String day : list)  {
+                Integer memberCount = memberDao.findMemberCountByRegTime(day);
+                memberCountList.add(memberCount);
+            }
+            return memberCountList;
+        }
+        return null;
+    }
+
 }

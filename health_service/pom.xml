@@ -35,7 +35,7 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <configuration>
                     <!-- 指定端口 -->
-                    <port>81</port>
+                    <port>91</port>
                     <!-- 请求路径 -->
                     <path>/</path>
                 </configuration>

@@ -1,4 +1,4 @@
-package com.itheima.health.test;
+/*package com.itheima.health.test;
 
 import com.lowagie.text.Document;
 import com.lowagie.text.Font;
@@ -10,14 +10,14 @@ import org.junit.Test;
 import java.awt.*;
 import java.io.FileOutputStream;
 
-/**
+*//**
  * @ClassName TestItext
  * @Description TODO
  * @Author ly
  * @Company 深圳黑马程序员
  * @Date 2020/2/28 14:23
  * @Version V1.0
- */
+ *//*
 public class TestItext {
 
     // 入门案例
@@ -38,4 +38,4 @@ public class TestItext {
         document.close();
     }
 
-}
+}*/

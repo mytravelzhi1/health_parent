@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.itheima.health.dao.UserDao">
+    <!--使用用户名，查询用户对象-->
+    <resultMap id="userMap" type="user">
+        <!--如果要封装对象中的集合或者是对象，此时id的值会传递给其他Dao模块去执行sql，id的值不会进行封装，如果需要封装，需要执行<id></id>-->
+        <id property="id" column="id"></id>
+        <collection property="roles" column="id"
+                    select="com.itheima.health.dao.RoleDao.findRolesByUserId"></collection>
+    </resultMap>
+    <select id="findUserByUsername" parameterType="string" resultMap="userMap">
+        SELECT * FROM t_user WHERE username = #{username}
+    </select>
+
+    <!--分页查询用户-->
+    <select id="findPage" parameterType="string" resultType="user">
+        select * from t_user
+        <if test="value!=null and value.length>0">
+            where username like concat('%',#{value},'%')
+        </if>
+    </select>
+
+    <!--新增检查组-->
+    <insert id="add" parameterType="user">
+        <selectKey resultType="int" order="AFTER" keyProperty="id">
+            select last_insert_id()
+        </selectKey>
+        insert into t_user(birthday,gender,username,password,remark,station,telephone) values
+        (#{birthday},#{gender},#{username},#{password},#{remark},#{station},#{telephone})
+    </insert>
+
+    <!--新增用户和角色中间表的数据-->
+    <select id="addUserAndRole">
+        insert into t_user_role(user_id,role_id) values (#{userId},#{roleId})
+    </select>
+
+    <!--根据查询id回显用户数据-->
+    <select id="findById" parameterType="int" resultType="user">
+        select * from t_user where id = #{id}
+    </select>
+
+    <!--查询当前用户包含的所有角色id-->
+    <select id="findRoleId" resultType="int" parameterType="int">
+        select role_id from t_user_role where user_id = #{userId}
+    </select>
+
+    <!--编辑保存用户-->
+    <update id="edit" parameterType="user">
+        update t_user
+        <set>
+            <if test="birthday!=null">
+                birthday = #{birthday},
+            </if>
+            <if test="gender!=null and gender.length>0">
+                gender = #{gender},
+            </if>
+            <if test="username!=null and username.length>0">
+                username = #{username},
+            </if>
+            <if test="password!=null and password.length>0">
+                password = #{password},
+            </if>
+            <if test="remark!=null and remark.length>0">
+                remark = #{remark},
+            </if>
+            <if test="station!=null and station.length>0">
+                station = #{station},
+            </if>
+            <if test="telephone!=null and telephone.length>0">
+                telephone = #{telephone},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--根据用户id删除中间表的数据-->
+    <delete id="deleteUserAndRoleByUserId" parameterType="int">
+        delete from t_user_role where user_id = #{userId}
+    </delete>
+
+    <!--使用用户ID，判断用户和角色中间表中是否存在数据-->
+    <select id="findUserAndRoleByUserId" parameterType="int" resultType="long">
+        select count(*) from t_user_role where user_id = #{id}
+    </select>
+
+    <!--删除用户-->
+    <delete id="delete" parameterType="int">
+        delete from t_user where id = #{id}
+    </delete>
+</mapper>

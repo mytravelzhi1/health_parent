@@ -1,0 +1,9 @@
+com\itheima\health\controller\OrderSettingContoller.class
+com\itheima\health\controller\SetmealContoller.class
+com\itheima\health\controller\CheckGroupContoller.class
+com\itheima\health\controller\CheckItemContoller.class
+com\itheima\health\controller\ReportContoller.class
+com\itheima\health\controller\PermissionContoller.class
+com\itheima\health\security\SpringSecurityUserService.class
+com\itheima\health\controller\RoleContoller.class
+com\itheima\health\controller\UserContoller.class

@@ -7,6 +7,8 @@ import java.util.Set;
 
 public interface RoleDao {
 
+
+
     Set<Role> findRolesByUserId(Integer userId);
 
     /**
@@ -14,4 +16,6 @@ public interface RoleDao {
      * @return
      */
     List<Role> findAll();
+
+    Integer findRolesByUsername(String username);
 }

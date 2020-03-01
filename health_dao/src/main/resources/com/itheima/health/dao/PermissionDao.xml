@@ -64,4 +64,9 @@
         select count(*) from t_permission
     </select>
 
+
+    <!--查询所有权限-->
+    <select id="findAll" resultType="permission">
+        select * from t_permission
+    </select>
 </mapper>

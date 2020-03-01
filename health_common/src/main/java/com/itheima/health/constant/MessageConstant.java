@@ -71,7 +71,7 @@ public class MessageConstant {
     public static final String GET_SETMEAL_LIST_FAIL = "查询套餐列表数据失败";
     public static final String QUERY_ROLE_SUCCESS = "查询角色成功";
     public static final String QUERY_ROLE_FAIL = "查询角色失败";
-    public static final String QUERY_USER_SUCCESS = "查询角色成功";
+    public static final String QUERY_USER_SUCCESS = "查询用户成功";
     public static final String QUERY_USER_FAIL = "查询用户失败";
     public static final String ADD_USER_SUCCESS = "新增用户成功";
     public static final String ADD_USER_FAIL = "新增用户失败";
@@ -79,6 +79,10 @@ public class MessageConstant {
     public static final String EDIT_USER_FAIL = "编辑用户失败";
     public static final String DELETE_USER_SUCCESS = "删除用户成功";
     public static final String DELETE_USER_FAIL = "删除用户失败";
+    public static final String ADD_ROLE_FAIL = "新增角色失败";
+    public static final String ADD_ROLE_SUCCESS = "新增角色成功";
+    public static final String QUERY_PERMISSION_SUCCESS = "查询权限成功";
+    public static final String QUERY_PERMISSION_FAIL = "查询权限失败";
     public static final String DELETE_PERMISSION_FAIL = "删除权限失败";
     public static final String DELETE_PERMISSION_SUCCESS = "删除权限成功";
     public static final String ADD_PERMISSION_SUCCESS = "新增权限成功";
@@ -93,5 +97,4 @@ public class MessageConstant {
     public static final String GET_CHECKGROUPANDSETMEALERROR = "当前检查组和套餐存在关联关系，不能进行删除！";
     public static final String GET_SETMEALANDCHECKGROUPERROR = "当前套餐和检查组存在关联关系，不能进行删除！";
     public static final String GET_USERANDROLEERROR = "当前用户和角色存在关联关系，不能进行删除！";
-    public static final String GET_PERMISSIONANDROLEERROR="当前权限与角色存在关联关系,不能进行删除！";
 }

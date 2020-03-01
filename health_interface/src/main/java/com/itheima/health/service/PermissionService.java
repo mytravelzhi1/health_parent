@@ -1,11 +1,15 @@
 package com.itheima.health.service;
 
-import com.itheima.health.entity.PageResult;
 import com.itheima.health.pojo.Permission;
 
-import java.util.Map;
+import java.util.List;
 
 public interface PermissionService {
+    /**
+     * 查询所有权限
+     * @return
+     */
+    List<Permission> findAll();
 
     //查询所有权限
     Map findAll();

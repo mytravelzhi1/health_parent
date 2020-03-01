@@ -40,4 +40,10 @@ public interface PermissionDao {
 
     //统计总权限数
     Long findPermissionTotal();
+
+    /**
+     * 查询所有权限
+     * @return
+     */
+    List<Permission> findAll();
 }

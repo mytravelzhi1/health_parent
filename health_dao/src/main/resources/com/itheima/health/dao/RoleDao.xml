@@ -13,4 +13,9 @@
     <select id="findRolesByUserId" parameterType="int" resultMap="roleMap">
         SELECT r.* FROM t_user_role ur,t_role r WHERE ur.role_id = r.id AND ur.user_id = #{userId}
     </select>
+
+    <!--查询所有角色-->
+    <select id="findAll" resultType="role">
+        select * from t_role
+    </select>
 </mapper>

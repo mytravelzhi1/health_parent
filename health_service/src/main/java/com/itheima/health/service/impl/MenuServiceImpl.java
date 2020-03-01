@@ -48,7 +48,6 @@ public class MenuServiceImpl implements MenuService {
                     if (child.getParentMenuId()==menu.getId()){
                         //说明是子节点
                         childList.add(child);//将所有的子节点放入集合
-                        //menuList.remove(child);
                     }
                 }
                 //将所有的子节点集合存入menu

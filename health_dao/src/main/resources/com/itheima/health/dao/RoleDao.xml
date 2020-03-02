@@ -18,4 +18,9 @@
     <select id="findAll" resultType="role">
         select * from t_role
     </select>
+
+    <!--根据用户名查询角色集合-->
+    <select id="findRolesByUsername" resultType="Integer" parameterType="String">
+        select role_id from t_user_role where user_id =(select id from t_user where username= #{username})
+    </select>
 </mapper>

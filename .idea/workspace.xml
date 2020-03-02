@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="256348c8-2e08-4878-b07c-78588a8698be" name="Default" comment="提交--一个用户对应多个角色完成版本 去掉多余代码" />
+    <list default="true" id="256348c8-2e08-4878-b07c-78588a8698be" name="Default" comment="提交生成的静态页面到版本控制" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/health_common/target/" />
@@ -45,15 +45,52 @@
     <session id="-392148775">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.0" value="2" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="properties" value="1" />
+          <entry key="xml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Properties" value="1" />
+          <entry key="XML" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="txt" value="14" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="14" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/health_service/src/main/resources/freemarker.properties">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/health_jobs/src/main/webapp/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -103,6 +140,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -211,7 +249,7 @@
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="27" />
+    <option name="x" value="25" />
     <option name="width" value="1245" />
     <option name="height" value="735" />
   </component>
@@ -260,7 +298,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
@@ -274,6 +311,44 @@
               <item name="health_parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="health_parent" type="462c0819:PsiDirectoryNode" />
               <item name="health_jobs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="health_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="health_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="health_jobs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="health_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="health_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="health_jobs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="health_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="health_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="health_jobs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="health_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="health_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="health_jobs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="health_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="health_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="health_jobs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="health_parent" type="b2602c69:ProjectViewProjectNode" />
@@ -324,6 +399,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -377,7 +453,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Maven.healthmobile_web [tomcat7:run]">
+  <component name="RunManager" selected="Maven.health_web [tomcat7:run]">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -531,9 +607,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Maven.healthmobile_web [tomcat7:run]" />
         <item itemvalue="Maven.health_web [tomcat7:run]" />
         <item itemvalue="Maven.health_service [tomcat7:run]" />
+        <item itemvalue="Maven.healthmobile_web [tomcat7:run]" />
         <item itemvalue="JUnit.TestItext.createPdf" />
         <item itemvalue="JUnit.TestPOI.writeExcel" />
       </list>
@@ -573,7 +649,8 @@
       <workItem from="1583035959878" duration="23455000" />
       <workItem from="1583076488473" duration="564000" />
       <workItem from="1583077060907" duration="1422000" />
-      <workItem from="1583102670225" duration="1419000" />
+      <workItem from="1583102670225" duration="2680000" />
+      <workItem from="1583142727479" duration="185000" />
     </task>
     <task id="LOCAL-00001" summary="提交从git上下载下来更新好的版本">
       <created>1583037196608</created>
@@ -610,7 +687,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583061699308</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="提交生成的静态页面到版本控制">
+      <created>1583142823322</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1583142823322</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -646,12 +730,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="274745000" />
+    <option name="totallyTimeSpent" value="276191000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2600536" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26340482" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
@@ -662,11 +747,11 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32879046" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.4036827" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3186969" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3186969" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3297491" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50075644" side_tool="true" weight="0.40819672" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="7" sideWeight="0.50075644" side_tool="true" visible="true" weight="0.407932" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3295082" />
       <window_info anchor="bottom" id="Spring" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
@@ -679,7 +764,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven Projects" order="4" visible="true" weight="0.3297587" />
+      <window_info anchor="right" id="Maven Projects" order="4" weight="0.3297587" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
@@ -740,7 +825,8 @@
     <MESSAGE value="提交--一个用户对应一个角色完成版本" />
     <MESSAGE value="提交--一个用户对应多个角色完成版本" />
     <MESSAGE value="提交--一个用户对应多个角色完成版本 去掉多余代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="提交--一个用户对应多个角色完成版本 去掉多余代码" />
+    <MESSAGE value="提交生成的静态页面到版本控制" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交生成的静态页面到版本控制" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -824,20 +910,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/health_dao/src/main/resources/com/itheima/health/dao/MemberDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="35" column="38" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/health_web/src/main/webapp/pages/report_business.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="144" column="72" selection-start-line="144" selection-start-column="52" selection-end-line="144" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/health_service/src/main/java/com/itheima/health/service/impl/ReportServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="394">
@@ -1163,6 +1235,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/health_service/src/main/resources/freemarker.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/health_jobs/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>

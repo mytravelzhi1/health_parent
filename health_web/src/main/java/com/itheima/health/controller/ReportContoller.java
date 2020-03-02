@@ -6,9 +6,11 @@ import com.itheima.health.entity.Result;
 import com.itheima.health.service.MemberService;
 import com.itheima.health.service.ReportService;
 import com.itheima.health.service.SetmealService;
+import com.itheima.health.utils.DateUtils;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,6 +20,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 
 /**
@@ -40,6 +44,82 @@ public class ReportContoller {
 
     @Reference
     ReportService reportService;
+
+    // 统计报表：按指定日期查询注册会员的数量（折线图）
+    @RequestMapping(value = "/getMemberReportByDate")
+    public Result getMemberReportByDate(@RequestBody String [] strings) {
+        try {
+            String startDate =  strings[0].split("T")[0];
+            String endDate =  strings[1].split("T")[0];
+            String mode = "default";
+            if (strings.length>2){
+                mode =  strings[2];
+            }
+
+
+
+            // 实例化LocalDate对象
+            LocalDate localDate1 = LocalDate.parse(startDate);
+            LocalDate localDate2 = LocalDate.parse(endDate);
+            // 查询日期之间的间隔
+            long days = localDate1.until(localDate2, ChronoUnit.DAYS);
+            long weeks = localDate1.until(localDate2, ChronoUnit.WEEKS);
+            long months = localDate1.until(localDate2, ChronoUnit.MONTHS);
+            long years = localDate1.until(localDate2, ChronoUnit.YEARS);
+            Integer distance = 0;
+
+            // 确认查询的模式
+            if (mode.equals("default")) {
+                // 默认采用天的模式进行查询
+                mode = "day";
+                distance = Math.toIntExact(days);
+
+                if (days > 31) {
+                    // 采用周的模式进行查询
+                    mode = "week";
+                    distance = Math.toIntExact(weeks);
+                }
+                if (months > 2) {
+                    // 采用月的模式进行查询
+                    mode = "month";
+                    distance = Math.toIntExact(months);
+                }
+                if (years > 2 ) {
+                    // 采用年的模式进行查询
+                    mode = "year";
+                    distance = Math.toIntExact(years);
+                }
+            }
+            // 赋值间隔时间(如果输入的mode不是default也需要给间隔时间赋值)
+            switch (mode)
+            {
+                case "year":distance = Math.toIntExact(years);break;
+                case "month": distance = Math.toIntExact(months);break;
+                case "week":  distance = Math.toIntExact(weeks);break;
+                case "day":distance = Math.toIntExact(days);break;
+            }
+            // 组织时间的集合List<String>，根据间隔的日期得到集合
+            Date date = new SimpleDateFormat("yyyy-MM-dd").parse(endDate);
+            List<String> List = DateUtils.getDateList(date,mode,-distance);
+
+            List<Integer> memberCountList = memberService.findMemberCountByList(List,mode);
+
+            Map<String, Object> map = new HashMap<>();
+            map.put("months", List);
+            map.put("memberCount", memberCountList);
+            map.put("mode",mode);
+            return new Result(true, MessageConstant.GET_MEMBER_NUMBER_REPORT_SUCCESS, map);
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false,"查询失败");
+
+        }
+
+
+    }
 
 
     // 统计报表（会员数量折线图统计）

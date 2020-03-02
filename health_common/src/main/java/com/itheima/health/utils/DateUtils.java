@@ -1,5 +1,6 @@
 package com.itheima.health.utils;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -300,5 +301,96 @@ public class DateUtils {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static List<String> getDateList(Date timeEnd ,String mode , Integer distance) throws ParseException {
+        List<String> list = new ArrayList<>();
+        switch (mode)
+        {
+            case "year":list = getDateListByYear(timeEnd,distance);break;
+            case "month":list =getDateListByMonth(timeEnd,distance);break;
+            case "week":list = getDateListByWeek(timeEnd,distance);break;
+            case "day":list = getDateListByDay(timeEnd,distance);break;
+        }
+        return list;
+    }
+
+    // 依据年进行间隔
+    public static List<String> getDateListByYear (Date timeEnd,Integer years) throws ParseException {
+
+
+
+        // 组织日期的集合List<String>
+        List<String> monthsList = new ArrayList<>();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(timeEnd);
+        calendar.add(Calendar.YEAR, --years); // 当前时间往前推n周
+        for (int i = 0; i < Math.abs(years); i++) {
+            calendar.add(Calendar.YEAR, 1); // 向前推n个天，再向后推7天
+            String day = new SimpleDateFormat("yyyy-MM-dd").format(calendar.getTime());
+            monthsList.add(day);
+        }
+        return monthsList;
+
+
+    }
+
+    // 依据月进行间隔
+    public static List<String> getDateListByMonth (Date timeEnd,Integer months) throws ParseException {
+
+
+
+        // 组织月份的集合List<String>，当前月计算前n个月
+        List<String> monthsList = new ArrayList<>();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(timeEnd);
+        calendar.add(Calendar.MONTH, months); // 当前时间往前推n个月
+        for (int i = 0; i < Math.abs(months); i++) {
+            calendar.add(Calendar.MONTH, 1); // 向前推n个月，再向后推1个月（2018-11）
+            String month = new SimpleDateFormat("yyyy-MM").format(calendar.getTime());
+            monthsList.add(month);
+        }
+        return monthsList;
+
+
+    }
+    // 依据日进行间隔
+    public static List<String> getDateListByDay (Date timeEnd,Integer days) throws ParseException {
+
+
+
+        // 组织日期的集合List<String>
+        List<String> monthsList = new ArrayList<>();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(timeEnd);
+        calendar.add(Calendar.DATE, --days); // 当前时间往前推n天
+        for (int i = 0; i < Math.abs(days); i++) {
+            calendar.add(Calendar.DATE, 1); // 向前推n个天，再向后推1天
+            String day = new SimpleDateFormat("yyyy-MM-dd").format(calendar.getTime());
+            monthsList.add(day);
+        }
+        return monthsList;
+
+
+    }
+
+    // 依据周进行间隔
+    public static List<String> getDateListByWeek (Date timeEnd,Integer weeks) throws ParseException {
+
+
+
+        // 组织日期的集合List<String>
+        List<String> monthsList = new ArrayList<>();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(timeEnd);
+        calendar.add(Calendar.DATE, --weeks*7); // 当前时间往前推n周
+        for (int i = 0; i < Math.abs(weeks); i++) {
+            calendar.add(Calendar.DATE, 7); // 向前推n个天，再向后推7天
+            String day = new SimpleDateFormat("yyyy-MM-dd").format(calendar.getTime());
+            monthsList.add(day);
+        }
+        return monthsList;
+
+
     }
 }

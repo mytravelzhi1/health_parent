@@ -11,4 +11,6 @@ public interface MemberService {
     void add(Member member);
 
     List<Integer> findCountByBeforeRegTime(List<String> months);
+
+    List<Integer> findMemberCountByList(List<String> list, String mode);
 }

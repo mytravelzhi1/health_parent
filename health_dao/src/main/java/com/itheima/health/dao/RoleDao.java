@@ -9,6 +9,8 @@ import java.util.Set;
 
 public interface RoleDao {
 
+
+
     Set<Role> findRolesByUserId(Integer userId);
 
     /**
@@ -100,4 +102,6 @@ public interface RoleDao {
      * @param id
      */
     void delete(Integer id);
+
+    List<Integer> findRolesByUsername(String username);
 }

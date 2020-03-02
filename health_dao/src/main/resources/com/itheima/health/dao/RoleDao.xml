@@ -101,4 +101,9 @@
     <delete id="delete" parameterType="int">
         delete from t_role where id = #{id}
     </delete>
+
+    <!--根据用户名查询角色集合-->
+    <select id="findRolesByUsername" resultType="Integer" parameterType="String">
+        select role_id from t_user_role where user_id =(select id from t_user where username= #{username})
+    </select>
 </mapper>

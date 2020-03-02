@@ -15,4 +15,8 @@ public interface MemberDao {
     Integer findTotalMember();
 
     Integer findThisWeekAndMonthNewMember(String date);
+
+    Integer findMemberCountByRegTime(String regTime);
+
+    Integer findMemberCountByDays(String day);
 }

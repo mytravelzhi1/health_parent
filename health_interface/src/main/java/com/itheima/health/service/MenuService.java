@@ -45,4 +45,7 @@ public interface MenuService {
      * @param id
      */
     void delete(Integer id);
+
+
+    List<Menu> findMenus(String username);
 }

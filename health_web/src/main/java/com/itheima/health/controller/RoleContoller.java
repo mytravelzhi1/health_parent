@@ -5,6 +5,7 @@ import com.itheima.health.constant.MessageConstant;
 import com.itheima.health.entity.PageResult;
 import com.itheima.health.entity.QueryPageBean;
 import com.itheima.health.entity.Result;
+import com.itheima.health.pojo.CheckGroup;
 import com.itheima.health.pojo.Role;
 import com.itheima.health.service.RoleService;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -115,4 +116,38 @@ public class RoleContoller {
         List<Integer> list = roleService.findMenuId(id);
         return list;
     }
+
+    /**
+     * 编辑保存角色
+     * @param role
+     * @param permissionIds
+     * @param menuIds
+     * @return
+     */
+    @RequestMapping(value = "/edit")
+    public Result edit(@RequestBody Role role, Integer[] permissionIds, Integer[] menuIds){
+        try {
+            roleService.edit(role,permissionIds,menuIds);
+            return new Result(true, MessageConstant.EDIT_ROLE_SUCCESS);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false, MessageConstant.EDIT_ROLE_FAIL);
+        }
+    }
+
+    @RequestMapping(value = "/delete")
+    public Result delete(Integer id){
+        try {
+            roleService.delete(id);
+            return new Result(true, MessageConstant.DELETE_ROLE_SUCCESS);
+        } catch(RuntimeException ex){
+            ex.printStackTrace();
+            return new Result(false, ex.getMessage());
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false, MessageConstant.DELETE_ROLE_FAIL);
+        }
+    }
+
 }

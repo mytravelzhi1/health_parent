@@ -1,24 +1,11 @@
 package com.itheima.health.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
-import com.itheima.health.constant.MessageConstant;
 import com.itheima.health.dao.PermissionDao;
-import com.itheima.health.entity.PageResult;
-import com.itheima.health.pojo.Permission;
 import com.itheima.health.pojo.Permission;
 import com.itheima.health.service.PermissionService;
-import com.itheima.health.utils.FreemarkerUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
-import redis.clients.jedis.JedisPool;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import java.util.List;
 
@@ -37,4 +24,13 @@ public class PermissionServiceImpl implements PermissionService {
     @Autowired
     PermissionDao permissionDao;
 
+    /**
+     * 查询所有权限
+     * @return
+     */
+    @Override
+    public List<Permission> findAll() {
+        List<Permission> list = permissionDao.findAll();
+        return list;
+    }
 }

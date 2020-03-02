@@ -62,4 +62,42 @@ public interface RoleDao {
      * @return
      */
     List<Integer> findMenuId(Integer id);
+
+    /**
+     * 编辑保存角色
+     * @param role
+     */
+    void edit(Role role);
+
+    /**
+     * 使用角色的id，先删除权限关联的数据
+     * @param id
+     */
+    void deleteRoleAndPermissionByRoleId(Integer id);
+
+    /**
+     * 使用角色的id，先删除权限关联的数据
+     * @param id
+     */
+    void deleteRoleAndMenuByRoleId(Integer id);
+
+    /**
+     * 判断角色和权限之间是否存在关联关系
+     * @param id
+     * @return
+     */
+    Long findRoleAndPermissionByRoleId(Integer id);
+
+    /**
+     * 判断角色和菜单之间是否存在关联关系
+     * @param id
+     * @return
+     */
+    Long findRoleAndMenuByRoleId(Integer id);
+
+    /**
+     * 删除角色
+     * @param id
+     */
+    void delete(Integer id);
 }

@@ -81,20 +81,25 @@ public class MessageConstant {
     public static final String DELETE_USER_FAIL = "删除用户失败";
     public static final String ADD_ROLE_FAIL = "新增角色失败";
     public static final String ADD_ROLE_SUCCESS = "新增角色成功";
+    public static final String EDIT_ROLE_SUCCESS = "编辑角色成功";
+    public static final String EDIT_ROLE_FAIL = "编辑角色成功";
     public static final String QUERY_PERMISSION_SUCCESS = "查询权限成功";
     public static final String QUERY_PERMISSION_FAIL = "查询权限失败";
-    public static final String DELETE_PERMISSION_FAIL = "删除权限失败";
-    public static final String DELETE_PERMISSION_SUCCESS = "删除权限成功";
-    public static final String ADD_PERMISSION_SUCCESS = "新增权限成功";
-    public static final String ADD_PERMISSION_FAIL = "新增权限失败";
-    public static final String EDIT_PERMISSION_FAIL = "编辑权限失败";
-    public static final String EDIT_PERMISSION_SUCCESS = "编辑权限成功";
-    public static final String QUERY_PERMISSION_SUCCESS = "查询权限成功";
-    public static final String QUERY_PERMISSION_FAIL = "查询权限失败";
+    public static final String DELETE_ROLE_SUCCESS = "删除角色成功";
+    public static final String DELETE_ROLE_FAIL = "删除角色失败";
+    public static final String ADD_MENU_FAIL = "新增菜单失败";
+    public static final String ADD_MENU_SUCCESS = "新增菜单成功";
+    public static final String EDIT_MENU_SUCCESS = "编辑菜单成功";
+    public static final String EDIT_MENU_FAIL = "编辑菜单成功";
+    public static final String DELETE_MENU_FAIL = "删除菜单失败";
+    public static final String DELETE_MENU_SUCCESS = "删除菜单成功";
 
     public static final String GET_CHECKITEMANDCHECKGROUPERROR = "当前检查项和检查组之间存在关联关系，此时不能删除！";
     public static final String GET_CHECKGROUPANDCHECKITEMERROR = "当前检查组和检查项存在关联关系，不能进行删除！";
     public static final String GET_CHECKGROUPANDSETMEALERROR = "当前检查组和套餐存在关联关系，不能进行删除！";
     public static final String GET_SETMEALANDCHECKGROUPERROR = "当前套餐和检查组存在关联关系，不能进行删除！";
     public static final String GET_USERANDROLEERROR = "当前用户和角色存在关联关系，不能进行删除！";
+    public static final String GET_ROLEANDPERMISSIONERROR = "当前角色和权限存在关联关系，不能进行删除！";
+    public static final String GET_ROLEANDMENUERROR = "当前角色和菜单存在关联关系，不能进行删除！";
+    public static final String GET_MENUANDROLEERROR = "当前菜单和角色存在关联关系，不能进行删除！";
 }

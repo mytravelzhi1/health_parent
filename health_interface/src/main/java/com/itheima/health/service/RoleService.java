@@ -49,4 +49,18 @@ public interface RoleService {
      * @return
      */
     List<Integer> findMenuId(Integer id);
+
+    /**
+     * 编辑保存角色
+     * @param role
+     * @param permissionIds
+     * @param menuIds
+     */
+    void edit(Role role, Integer[] permissionIds, Integer[] menuIds);
+
+    /**
+     * 删除角色
+     * @param id
+     */
+    void delete(Integer id);
 }

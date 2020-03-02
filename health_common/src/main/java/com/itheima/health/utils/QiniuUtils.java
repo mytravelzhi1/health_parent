@@ -14,9 +14,9 @@ import com.qiniu.util.Auth;
  * 七牛云工具类
  */
 public class QiniuUtils {
-    public  static String accessKey = "liyKTcQC5TP1LrhgZH6Xem8zqMXbEtVgfAINP53v";
-    public  static String secretKey = "f5zpuzKAPceEMG77-EK3XbwqgOBRDXDawG4UHRta";
-    public  static String bucket = "itcast-health85";
+    public  static String accessKey = "L44uSSIrSWVSFIKk66Wjaioka-9cCbiOjOLLpNDZ";
+    public  static String secretKey = "xhRDUi-JhhKUTQblF8MQHALvVxJqVivUoCq8wbrw";
+    public  static String bucket = "itcast-itheimahealth";
 
     // 路径上传（适用于本地上传）（不用）
     public static void upload2Qiniu(String filePath,String fileName){

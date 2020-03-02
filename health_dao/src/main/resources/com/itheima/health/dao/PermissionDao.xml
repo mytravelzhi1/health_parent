@@ -10,58 +10,6 @@
 
     <!--查询所有权限-->
     <select id="findAll" resultType="permission">
-        SELECT * FROM t_permission
+        select * from t_permission
     </select>
-
-    <!--新增权限-->
-    <insert id="add" parameterType="permission">
-        insert into t_permission (name,keyword,description)
-        values (#{name},#{keyword},#{description})
-    </insert>
-
-    <!--分页查询-->
-    <select id="findPage" parameterType="string" resultType="permission">
-        SELECT * FROM t_permission
-        <if test="value != null and value.length>0">
-            WHERE name like concat('%',#{value},'%') OR keyword like concat('%',#{value},'%')
-        </if>
-    </select>
-
-    <!--删除检查项-->
-    <delete id="delete" parameterType="int">
-        delete from t_permission where id = #{id}
-    </delete>
-
-    <!--检查权限与角色之间关系-->
-    <select id="findRoleAndPermissionCountByPermissionId" parameterType="int" resultType="long">
-        select count(*) from t_role_permission where permission_id = #{permissionId};
-    </select>
-
-    <!--根据id更新权限,如果表单中传递空值，则不更新该字段的值，仍然保留数据库表之前的值,使用<set>和<if>标签共同完成-->
-    <update id="edit" parameterType="permission">
-        update t_permission
-        <set>
-            <if test="name !=null and name.length>0">
-                name=#{name},
-            </if>
-            <if test="keyword !=null and keyword.length>0">
-                keyword=#{keyword},
-            </if>
-            <if test="description !=null and description.length>0">
-                description=#{description},
-            </if>
-        </set>
-        where id = #{id}
-    </update>
-
-    <!--根据id查询权限-->
-    <select id="findById" parameterType="int" resultType="permission">
-        select * from t_permission where id = #{id}
-    </select>
-
-    <!--统计权限总数-->
-    <select id="findPermissionTotal" resultType="long">
-        select count(*) from t_permission
-    </select>
-
 </mapper>

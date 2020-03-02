@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 页面meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>传智健康</title>
+    <meta name="description" content="传智健康">
+    <meta name="keywords" content="传智健康">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="../plugins/elementui/index.css">
+    <link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .avatar-uploader .el-upload {
+            border: 1px dashed #d9d9d9;
+            border-radius: 6px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .avatar-uploader .el-upload:hover {
+            border-color: #409EFF;
+        }
+        .avatar-uploader-icon {
+            font-size: 28px;
+            color: #8c939d;
+            width: 178px;
+            height: 178px;
+            line-height: 178px;
+            text-align: center;
+        }
+        .avatar {
+            width: 178px;
+            height: 178px;
+            display: block;
+        }
+        .datatable {
+            position: relative;
+            box-sizing: border-box;
+            -webkit-box-flex: 1;
+            width: 100%;
+            max-width: 100%;
+            font-size: 14px;
+            color: rgb(96, 98, 102);
+            overflow: hidden;
+            flex: 1 1 0%;
+        }
+        .datatable td, .datatable th {
+            padding: 12px 0;
+            min-width: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            text-overflow: ellipsis;
+            vertical-align: middle;
+            position: relative;
+            text-align: left;
+        }
+    </style>
+</head>
+<body class="hold-transition">
+<div id="app">
+    <div class="content-header">
+        <h1>系统设置
+            <small>菜单管理</small>
+        </h1>
+        <el-breadcrumb separator-class="el-icon-arrow-right" class="breadcrumb">
+            <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+            <el-breadcrumb-item>系统设置</el-breadcrumb-item>
+            <el-breadcrumb-item>菜单管理</el-breadcrumb-item>
+        </el-breadcrumb>
+    </div>
+    <div class="app-container">
+        <div class="box">
+            <div class="filter-container">
+                <el-input placeholder="菜单名称" v-model="pagination.queryString" style="width: 200px;"
+                          class="filter-item"></el-input>
+                <el-button @click="handleCurrentChange(1)" class="dalfBut">查询</el-button>
+                <el-button type="primary" class="butT" @click="handleCreate()">新建</el-button>
+            </div>
+            <el-table size="small" current-row-key="id" :data="dataList" stripe highlight-current-row>
+                <el-table-column type="index" align="center" label="序号"></el-table-column>
+                <el-table-column prop="name" label="菜单名称" align="center"></el-table-column>
+                <el-table-column prop="linkUrl" label="链接路径" align="center"></el-table-column>
+                <el-table-column prop="path" label="菜单对应路径" align="center"></el-table-column>
+                <el-table-column prop="priority" label="优先级" align="center"></el-table-column>
+                <el-table-column prop="icon" label="图标" align="center"></el-table-column>
+                <el-table-column prop="description" label="描述" align="center"></el-table-column>
+                <el-table-column label="操作" align="center">
+                    <template slot-scope="scope">
+                        <el-button type="primary" size="mini" @click="handleUpdate(scope.row)">编辑</el-button>
+                        <el-button size="mini" type="danger" @click="handleDelete(scope.row)">删除</el-button>
+                    </template>
+                </el-table-column>
+            </el-table>
+            <div class="pagination-container">
+                <el-pagination
+                        class="pagiantion"
+                        @current-change="handleCurrentChange"
+                        :current-page="pagination.currentPage"
+                        :page-size="pagination.pageSize"
+                        layout="total, prev, pager, next, jumper"
+                        :total="pagination.total">
+                </el-pagination>
+            </div>
+            <!-- 新增标签弹层 -->
+            <div class="add-form">
+                <el-dialog title="新增菜单" :visible.sync="dialogFormVisible">
+                    <el-form ref="dataAddForm" :model="formData" :rules="rules" label-position="right"
+                             label-width="100px">
+                        <el-row>
+                            <el-col :span="12">
+                                <el-form-item label="菜单名称" prop="name">
+                                    <el-input v-model="formData.name"/>
+                                </el-form-item>
+                            </el-col>
+                            <el-col :span="12">
+                                <el-form-item label="链接路径" prop="linkUrl">
+                                    <el-input v-model="formData.linkUrl"/>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <el-row>
+                            <el-col :span="12">
+                                <el-form-item label="菜单对应路径">
+                                    <el-input v-model="formData.path"/>
+                                </el-form-item>
+                            </el-col>
+                            <el-col :span="12">
+                                <el-form-item label="菜单优先级" prop="priority">
+                                    <el-input type="priority" v-model.number="formData.priority" autocomplete="off"/>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <el-row>
+                            <el-col :span="24">
+                                <el-form-item label="菜单描述">
+                                    <el-input v-model="formData.description" type="textarea"/>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <el-row>
+                            <el-col :span="24">
+                                <el-form-item label="上传图标">
+                                    <!--
+                                        action="/setmeal/upload.do":url地址
+                                        name="imgFile"：上传表单的名称（url访问的Controller可以获取）
+                                        on-success	文件上传成功时的钩子
+                                        before-upload	上传文件之前的钩子，参数为上传的文件，若返回 false 或者返回 Promise 且被 reject，则停止上传。
+                                    -->
+                                    <el-upload
+                                            class="avatar-uploader"
+                                            action="/menu/upload.do"
+                                            :auto-upload="autoUpload"
+                                            name="imgFile"
+                                            :show-file-list="false"
+                                            :on-success="handleAvatarSuccess"
+                                            :before-upload="beforeAvatarUpload">
+                                        <img v-if="imageUrl" :src="imageUrl" class="avatar">
+                                        <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+                                    </el-upload>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                    </el-form>
+                    <div slot="footer" class="dialog-footer">
+                        <el-button @click="dialogFormVisible = false">取消</el-button>
+                        <el-button type="primary" @click="handleAdd()">确定</el-button>
+                    </div>
+                </el-dialog>
+            </div>
+
+            <!-- 编辑标签弹层 -->
+            <div class="add-form">
+                <el-dialog title="编辑菜单" :visible.sync="dialogFormVisible4Edit">
+                    <el-form ref="dataEditForm" :model="formData" :rules="rules" label-position="right"
+                             label-width="100px">
+                        <el-row>
+                            <el-col :span="12">
+                                <el-form-item label="菜单名称" prop="name">
+                                    <el-input v-model="formData.name"/>
+                                </el-form-item>
+                            </el-col>
+                            <el-col :span="12">
+                                <el-form-item label="链接路径" prop="linkUrl">
+                                    <el-input v-model="formData.linkUrl"/>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <el-row>
+                            <el-col :span="12">
+                                <el-form-item label="菜单对应路径">
+                                    <el-input v-model="formData.path"/>
+                                </el-form-item>
+                            </el-col>
+                            <el-col :span="12">
+                                <el-form-item label="菜单优先级" prop="priority">
+                                    <el-input type="priority" v-model.number="formData.priority" autocomplete="off"/>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <el-row>
+                            <el-col :span="24">
+                                <el-form-item label="菜单描述">
+                                    <el-input v-model="formData.description" type="textarea"/>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <el-row>
+                            <el-col :span="24">
+                                <el-form-item label="上传图标">
+                                    <!--
+                                        action="/setmeal/upload.do":url地址
+                                        name="imgFile"：上传表单的名称（url访问的Controller可以获取）
+                                        on-success	文件上传成功时的钩子
+                                        before-upload	上传文件之前的钩子，参数为上传的文件，若返回 false 或者返回 Promise 且被 reject，则停止上传。
+                                    -->
+                                    <el-upload
+                                            class="avatar-uploader"
+                                            action="/menu/upload.do"
+                                            :auto-upload="autoUpload"
+                                            name="imgFile"
+                                            :show-file-list="false"
+                                            :on-success="handleAvatarSuccess"
+                                            :before-upload="beforeAvatarUpload">
+                                        <img v-if="imageUrl" :src="imageUrl" class="avatar">
+                                        <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+                                    </el-upload>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                    </el-form>
+                    <div slot="footer" class="dialog-footer">
+                        <el-button @click="dialogFormVisible4Edit = false">取消</el-button>
+                        <el-button type="primary" @click="handleEdit()">确定</el-button>
+                    </div>
+                </el-dialog>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<!-- 引入组件库 -->
+<script src="../js/vue.js"></script>
+<script src="../plugins/elementui/index.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script src="../js/axios-0.18.0.js"></script>
+<script>
+    var vue = new Vue({
+        el: '#app',
+        data: {
+            autoUpload:true,//自动上传
+            imageUrl:null,//模型数据，用于上传图片完成后图片预览
+
+            pagination: {//分页相关模型数据
+                currentPage: 1,//当前页码
+                pageSize: 10,//每页显示的记录数
+                total: 0,//总记录数
+                queryString: null//查询条件
+            },
+            dataList: [],//当前页要展示的分页列表数据
+            formData: {},//表单数据
+            dialogFormVisible: false,//增加表单是否可见
+            dialogFormVisible4Edit: false,//编辑表单是否可见
+            rules: {//校验规则
+                name: [{required: true, message: '菜单名称为必填项', trigger: 'blur'}],
+                linkUrl: [{required: true, message: '链接路径为必填项', trigger: 'blur'}],
+                priority: [{type: 'number', message: '菜单优先级必须为数字值'}]
+
+            }
+        },
+        //钩子函数，VUE对象初始化完成后自动执行
+        created() {
+            this.findPage();
+        },
+        methods: {
+            //文件上传成功后的钩子，response为服务端返回的值，file为当前上传的文件封装成的js对象
+            handleAvatarSuccess(response, file) {
+                // 返回Result(flag,message,data)
+                if(response.flag){
+                    // 赋值imageUrl(imageUrl=”七牛云空间”+UUID的方式生成文件名)
+                    this.imageUrl = "http://q6jkf5eax.bkt.clouddn.com/"+response.data;
+                    // 赋值img属性的值（UUID生成的文件名），用于套餐保存
+                    this.formData.icon = response.data;
+                    // 成功的提示
+                    this.$message({
+                        type:"success",
+                        message:response.message
+                    })
+                }else{
+                    // 成功的提示
+                    this.$message({
+                        type:"error",
+                        message:response.message
+                    })
+                }
+            },
+            //上传图片之前执行
+            beforeAvatarUpload(file) {
+                const isJPG = file.type === 'image/jpeg';
+                const isLt2M = file.size / 1024 / 1024 < 2;
+                if (!isJPG) {
+                    this.$message.error('上传菜单图标只能是 JPG 格式!');
+                }
+                if (!isLt2M) {
+                    this.$message.error('上传菜单图标大小不能超过 2MB!');
+                }
+                return isJPG && isLt2M;
+            },
+            //编辑
+            handleEdit() {
+                // 提交表单数据
+                this.$refs['dataEditForm'].validate((valid) => {
+                    // 校验成功
+                    if (valid) {
+                        axios.post("/menu/edit.do", this.formData).then((response) => {
+                            // 返回值Result(flag,message,data)
+                            if (response.data.flag) {
+                                // 关闭窗口
+                                this.dialogFormVisible4Edit = false;
+                                // 提示成功
+                                this.$message({
+                                    type: "success",
+                                    message: response.data.message
+                                })
+                            } else {
+                                // 提示失败
+                                this.$message({
+                                    type: "error",
+                                    message: response.data.message
+                                })
+                            }
+                        }).catch((error) => {
+                            this.showError(error);
+                        }).finally(() => {
+                            // 刷新页面
+                            this.findPage();
+                        })
+                    }
+                    // 校验失败
+                    else {
+                        this.$message.error("表单校验有误");
+                    }
+                })
+            },
+            //添加
+            handleAdd() {
+                // 提交表单数据
+                this.$refs['dataAddForm'].validate((valid) => {
+                    // 校验成功
+                    if (valid) {
+                        axios.post("/menu/add.do", this.formData).then((response) => {
+                            // 返回值Result(flag,message,data)
+                            if (response.data.flag) {
+                                // 关闭窗口
+                                this.dialogFormVisible = false;
+                                // 提示成功
+                                this.$message({
+                                    type: "success",
+                                    message: response.data.message
+                                })
+                            } else {
+                                // 提示失败
+                                this.$message({
+                                    type: "error",
+                                    message: response.data.message
+                                })
+                            }
+                        }).catch((error) => {
+                            this.showError(error);
+                        }).finally(() => {
+                            // 刷新页面
+                            this.findPage();
+                        })
+                    }
+                    // 校验失败
+                    else {
+                        this.$message.error("表单校验有误");
+                    }
+                })
+            },
+            //分页查询
+            findPage() {
+                // 分页查询
+                var param = {
+                    "currentPage": this.pagination.currentPage,
+                    "pageSize": this.pagination.pageSize,
+                    "queryString": this.pagination.queryString
+                };
+                axios.post("/menu/findPage.do", param).then((response) => {
+                    // 返回PageResult(total,rows)
+                    this.pagination.total = response.data.total;
+                    this.dataList = response.data.rows;
+                }).catch((error) => {
+                    this.showError(error);
+                })
+            },
+            // 重置表单
+            resetForm() {
+                this.formData = {};
+                // 重置图片的imageUrl
+                this.imageUrl = null;
+            },
+            // 弹出添加窗口
+            handleCreate() {
+                // 清空表单
+                this.resetForm();
+                // 弹出el-dialog的对话框，即新增窗口
+                this.dialogFormVisible = true;
+            },
+            // 弹出编辑窗口
+            handleUpdate(row) {
+                // alert(row.id);
+                this.dialogFormVisible4Edit = true;
+                // 使用ID，查询菜单 回显数据
+                axios.get("/menu/findById.do?id=" + row.id).then((response) => {
+                    if (response.data.flag) {
+                        // 返回Result(flag,message,data)，将对象中的data数据封装成一个menu对象
+                        this.formData = response.data.data;
+                        this.imageUrl = "http://q6jkf5eax.bkt.clouddn.com/"+response.data.data.icon;
+                    } else {
+                        this.$message.error(response.data.message);
+                    }
+                }).catch((error) => {
+
+                })
+            },
+            //切换页码
+            handleCurrentChange(currentPage) {
+                // 对模型的当前页进行改变
+                this.pagination.currentPage = currentPage;
+                this.findPage();
+            },
+            // 删除
+            handleDelete(row) {
+                // alert(row.id);
+                this.$confirm('此操作将永久删除该菜单, 是否继续?', '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning',
+                    center: true
+                }).then(() => {
+                    // 选择“确定”
+                    axios.get("/menu/delete.do?id=" + row.id).then((response) => {
+                        // 定义返回Result(flag,message,data)
+                        if (response.data.flag) {
+                            this.$message({
+                                type: 'success',
+                                message: response.data.message
+                            });
+                        } else {
+                            this.$message({
+                                type: 'error',
+                                message: response.data.message
+                            });
+                        }
+                    }).catch((error) => {
+                        this.showError(error);
+                    }).finally(() => {
+                        // 刷新页面
+                        this.findPage();
+                    })
+
+                }).catch(() => {
+                    // 选择“取消”
+                    this.$message({
+                        type: 'info',
+                        message: '已取消删除'
+                    });
+                });
+            },
+            showError(e) {
+                // console.log(e);
+                if (e == 'Error: Request failed with status code 403') {
+                    this.$message.error("权限不足，拒绝访问！");
+                    return;
+                } else {
+                    this.$message.error("请查看数据输入是否有误！");
+                    return;
+                }
+            }
+        }
+    })
+</script>
+</html>

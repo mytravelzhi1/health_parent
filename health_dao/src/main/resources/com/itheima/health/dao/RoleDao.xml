@@ -19,6 +19,89 @@
         select * from t_role
     </select>
 
+    <!--分页查询角色-->
+    <select id="findPage" parameterType="string" resultType="role">
+        select * from t_role
+        <if test="value!=null and value.length>0">
+            where name like concat('%',#{value},'%')
+        </if>
+    </select>
+
+    <!--保存角色 返回角色ID-->
+    <insert id="add" parameterType="role">
+        <selectKey resultType="int" order="AFTER" keyProperty="id">
+            select last_insert_id()
+        </selectKey>
+        insert into t_role(name,keyword,description) values(#{name},#{keyword},#{description})
+    </insert>
+
+    <!--向角色菜单中间表插入数据-->
+    <insert id="addRoleAndMenu" parameterType="map">
+        insert into t_role_menu(role_id,menu_id) values(#{roleId},#{menuId})
+    </insert>
+
+    <!--向角色权限中间表插入数据-->
+    <insert id="addRoleAndPermission" parameterType="map">
+        insert into t_role_permission(role_id,permission_id) values(#{roleId},#{permissionId})
+    </insert>
+
+    <!--根据id查询角色信息-->
+    <select id="findById" parameterType="int" resultType="role">
+        select * from t_role where id = #{id}
+    </select>
+
+    <!--查询当前角色包含的所有权限id-->
+    <select id="findPermissionId" resultType="int" parameterType="int">
+        select permission_id from t_role_permission where role_id = #{roleId}
+    </select>
+
+    <!--查询当前角色包含的所有菜单id-->
+    <select id="findMenuId" resultType="int" parameterType="int">
+        select menu_id from t_role_menu where role_id = #{roleId}
+    </select>
+
+    <!--编辑保存角色-->
+    <update id="edit" parameterType="role">
+        update t_role
+        <set>
+            <if test="name!=null and name.length>0">
+                name = #{name},
+            </if>
+            <if test="keyword!=null and keyword.length>0">
+                keyword = #{keyword},
+            </if>
+            <if test="description!=null and description.length>0">
+                description = #{description},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--使用角色的id，先删除权限关联的数据-->
+    <delete id="deleteRoleAndPermissionByRoleId" parameterType="int">
+        delete from t_role_permission where role_id = #{roleId}
+    </delete>
+
+    <!--使用角色的id，先删除菜单关联的数据-->
+    <delete id="deleteRoleAndMenuByRoleId" parameterType="int">
+        delete from t_role_menu where role_id = #{roleId}
+    </delete>
+
+    <!--使用用户ID，判断用户和角色中间表中是否存在数据-->
+    <select id="findRoleAndPermissionByRoleId" parameterType="int" resultType="long">
+        select count(*) from t_role_permission where role_id = #{id}
+    </select>
+
+    <!--使用用户ID，判断用户和角色中间表中是否存在数据-->
+    <select id="findRoleAndMenuByRoleId" parameterType="int" resultType="long">
+        select count(*) from t_role_menu where role_id = #{id}
+    </select>
+
+    <!--删除用户-->
+    <delete id="delete" parameterType="int">
+        delete from t_role where id = #{id}
+    </delete>
+
     <!--根据用户名查询角色集合-->
     <select id="findRolesByUsername" resultType="Integer" parameterType="String">
         select role_id from t_user_role where user_id =(select id from t_user where username= #{username})

@@ -93,6 +93,12 @@ public class MessageConstant {
     public static final String EDIT_MENU_FAIL = "编辑菜单成功";
     public static final String DELETE_MENU_FAIL = "删除菜单失败";
     public static final String DELETE_MENU_SUCCESS = "删除菜单成功";
+    public static final String DELETE_PERMISSION_FAIL = "删除权限失败";
+    public static final String DELETE_PERMISSION_SUCCESS = "删除权限成功";
+    public static final String ADD_PERMISSION_SUCCESS = "新增权限成功";
+    public static final String ADD_PERMISSION_FAIL = "新增权限失败";
+    public static final String EDIT_PERMISSION_FAIL = "编辑权限失败";
+    public static final String EDIT_PERMISSION_SUCCESS = "编辑权限成功";
 
     public static final String GET_CHECKITEMANDCHECKGROUPERROR = "当前检查项和检查组之间存在关联关系，此时不能删除！";
     public static final String GET_CHECKGROUPANDCHECKITEMERROR = "当前检查组和检查项存在关联关系，不能进行删除！";
@@ -102,4 +108,5 @@ public class MessageConstant {
     public static final String GET_ROLEANDPERMISSIONERROR = "当前角色和权限存在关联关系，不能进行删除！";
     public static final String GET_ROLEANDMENUERROR = "当前角色和菜单存在关联关系，不能进行删除！";
     public static final String GET_MENUANDROLEERROR = "当前菜单和角色存在关联关系，不能进行删除！";
+    public static final String GET_PERMISSIONANDROLEERROR="当前权限与角色存在关联关系,不能进行删除！";
 }

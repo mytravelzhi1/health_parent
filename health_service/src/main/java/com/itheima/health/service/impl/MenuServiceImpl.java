@@ -66,7 +66,7 @@ public class MenuServiceImpl implements MenuService {
     public void add(Menu menu) {
         menuDao.add(menu);
         //Redis的集合存储，保存套餐数据图片的时候，将图片名称，存放到Redis中一份（key值setmeal_pic_db_resource），然后在保存到数据库
-        jedisPool.getResource().sadd(RedisPicConstant.SETMEAL_PIC_DB_RESOURCE,menu.getIcon());
+        jedisPool.getResource().sadd(RedisPicConstant.MENU_PIC_DB_RESOURCE,menu.getIcon());
     }
 
     /**

@@ -33,4 +33,9 @@
     <update id="updateReservationsByOrderDate" parameterType="date">
         UPDATE t_ordersetting SET reservations = reservations+1 WHERE orderDate = #{orderDate}
     </update>
+
+    <!--Quatz定时清理预约设置-->
+    <delete id="clearOrderSetting" parameterType="string">
+        delete from t_ordersetting where orderDate &lt; #{clearTime}
+    </delete>
 </mapper>

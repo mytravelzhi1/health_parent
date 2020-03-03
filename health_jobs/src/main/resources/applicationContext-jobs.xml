@@ -17,24 +17,40 @@
     <!--<context:annotation-config></context:annotation-config>-->
     <!--方式二-->
     <context:component-scan base-package="com.itheima.health"></context:component-scan>
-    <!--1：自定义Job-->
-    <bean id="jobDemo" class="com.itheima.health.job.ClearImgJob"></bean>
+    <!--1：自定义ImgJob-->
+    <bean id="imgJob" class="com.itheima.health.job.ClearImgJob"></bean>
     <!--2：任务细节类，任务调度工厂，加载自定义的Job及方法-->
-    <bean id="jobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
-        <property name="targetObject" ref="jobDemo"></property>
+    <bean id="jobDetail01" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="imgJob"></property>
         <property name="targetMethod" value="clearImg"></property>
     </bean>
     <!--3：开启一个触发器（1、频率触发器；2：定时触发器），加载任务调度工厂-->
-    <bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
-        <property name="jobDetail" ref="jobDetail"></property>
+    <bean id="cronTrigger1" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="jobDetail01"></property>
         <!--定时任务表达式；每10秒执行1次（0/10 * * * * ?）-->
         <property name="cronExpression" value="30 33 * * * ?"></property>
     </bean>
+
+    <!--1：自定义clearOrderSettingJob-->
+    <bean id="clearOrderSettingJob" class="com.itheima.health.job.ClearOrderSettingJob"></bean>
+    <!--2：任务细节类，任务调度工厂，加载自定义的Job及方法-->
+    <bean id="jobDetail02" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="clearOrderSettingJob"></property>
+        <property name="targetMethod" value="clearOrderSetting"></property>
+    </bean>
+    <!--3：开启一个触发器（1、频率触发器；2：定时触发器），加载任务调度工厂-->
+    <bean id="cronTrigger2" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="jobDetail02"></property>
+        <!--定时任务表达式；每10秒执行1次（0/10 * * * * ?）-->
+        <property name="cronExpression" value="30 16 * * * ?"></property>
+    </bean>
+
     <!--4：开启使用调度工厂-->
     <bean id="scheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
         <property name="triggers">
             <array>
-                <ref bean="cronTrigger"></ref>
+                <ref bean="cronTrigger1"></ref>
+                <ref bean="cronTrigger2"></ref>
             </array>
         </property>
     </bean>

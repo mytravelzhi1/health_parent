@@ -32,7 +32,7 @@ import java.util.Map;
 public class PermissionServiceImpl implements PermissionService {
 
     @Autowired
-    private PermissionDao permissionDao;
+    PermissionDao permissionDao;
 
     @Autowired
     private FreeMarkerConfigurer freeMarkerConfigurer;

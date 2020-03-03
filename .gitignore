@@ -1,0 +1,17 @@
+.idea
+health_common/health_common.iml
+health_common/target/
+health_dao/health_dao.iml
+health_dao/target/
+health_interface/health_interface.iml
+health_interface/target/
+health_jobs/health_jobs.iml
+health_parent.iml
+health_pojo/health_pojo.iml
+health_pojo/target/
+health_service/health_service.iml
+health_service/target/
+health_web/health_web.iml
+health_web/target/
+healthmobile_web/healthmobile_web.iml
+healthmobile_web/target/

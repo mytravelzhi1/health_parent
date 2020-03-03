@@ -13,4 +13,8 @@ public class RedisPicConstant {
     public static final String SETMEAL_PIC_RESOURCE = "setmeal_pic_resource";
     // 图片保存到套餐数据库的时候，Redis的存储key
     public static final String SETMEAL_PIC_DB_RESOURCE = "setmeal_pic_db_resource";
+    // 图片上传七牛云的时候，Redis的存储key
+    public static final String MENU_PIC_RESOURCES = "menu_Pic_Resources";
+    // 图片保存到套餐数据库的时候，Redis的存储key
+    public static final String MENU_PIC_DB_RESOURCE = "menu_pic_db_resource";
 }

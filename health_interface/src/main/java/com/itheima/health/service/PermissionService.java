@@ -6,7 +6,6 @@ import com.itheima.health.pojo.Permission;
 import java.util.Map;
 
 public interface PermissionService {
-
     //查询所有权限
     Map findAll();
 
@@ -24,5 +23,4 @@ public interface PermissionService {
 
     //根据id查询权限,回显数据
     Permission findById(Integer id);
-
 }

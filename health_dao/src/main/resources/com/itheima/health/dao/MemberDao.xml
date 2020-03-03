@@ -50,4 +50,28 @@
     <!--根据日期查-->
     <select resultType="int" parameterType="string"
             id="findMemberCountByDays">SELECT COUNT(id) FROM t_member WHERE regTime = #{day} </select>
+    <!--根据性别查询男女的数量SELECT case sex when '1' then  '男' when '0' then '未知' when null then '未知' else '女',COUNT(*) value FROM t_member GROUP BY sex-->
+    <select id="findSexCountByMemberSex" resultType="map">
+   select  case when sex = 1 then '男' when  sex = 2 then '女' else '未知'  END name ,COUNT(*) value  from t_member GROUP BY sex
+    </select>
+    <!--根据年龄段查询会员数量-->
+    <select id="findAgeCountByMemberAge" resultType="map" >
+        SELECT nnd as `name`,count(*) as value from(
+        SELECT
+        CASE
+        WHEN ROUND(DATEDIFF(CURDATE(), birthday)/365.2422) >0
+        and ROUND(DATEDIFF(CURDATE(), birthday)/365.2422)  &lt;=  12 THEN '0-12岁'
+        WHEN ROUND(DATEDIFF(CURDATE(), birthday)/365.2422)  >= 13
+        and ROUND(DATEDIFF(CURDATE(), birthday)/365.2422)  &lt;=   17 THEN '13-17岁'
+        WHEN ROUND(DATEDIFF(CURDATE(), birthday)/365.2422)  >=    18
+        and ROUND(DATEDIFF(CURDATE(), birthday)/365.2422) &lt;=    22 THEN '18-22岁'
+        WHEN ROUND(DATEDIFF(CURDATE(), birthday)/365.2422) >=  23
+        and ROUND(DATEDIFF(CURDATE(),birthday)/365.2422)  &lt;=  30 THEN '23-30岁'
+        WHEN ROUND(DATEDIFF(CURDATE(), birthday)/365.2422) >=  31
+        and ROUND(DATEDIFF(CURDATE(), birthday)/365.2422)  &lt;=   59 THEN '31-59岁'
+        WHEN ROUND(DATEDIFF(CURDATE(), birthday)/365.2422) >= 60 THEN '60岁以上'
+        END as nnd
+        from t_member
+        ) a GROUP BY `name`
+    </select>
 </mapper>

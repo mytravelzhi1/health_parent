@@ -1,3 +1,4 @@
+com\itheima\health\service\MenuService.class
 com\itheima\health\service\MemberService.class
 com\itheima\health\service\PermissionService.class
 com\itheima\health\service\ReportService.class

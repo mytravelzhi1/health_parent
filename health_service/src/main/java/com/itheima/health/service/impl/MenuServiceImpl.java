@@ -6,6 +6,7 @@ import com.github.pagehelper.PageHelper;
 import com.itheima.health.constant.MessageConstant;
 import com.itheima.health.constant.RedisPicConstant;
 import com.itheima.health.dao.MenuDao;
+import com.itheima.health.dao.RoleDao;
 import com.itheima.health.entity.PageResult;
 import com.itheima.health.pojo.Menu;
 import com.itheima.health.service.MenuService;
@@ -14,10 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import redis.clients.jedis.JedisPool;
 
-import java.util.List;
-import com.itheima.health.dao.RoleDao;
-
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @ClassName MenuServiceImpl
@@ -81,7 +80,9 @@ public class MenuServiceImpl implements MenuService {
     public void add(Menu menu) {
         menuDao.add(menu);
         //Redis的集合存储，保存套餐数据图片的时候，将图片名称，存放到Redis中一份（key值setmeal_pic_db_resource），然后在保存到数据库
-        jedisPool.getResource().sadd(RedisPicConstant.MENU_PIC_DB_RESOURCE,menu.getIcon());
+        if (menu.getIcon()!=null){
+            jedisPool.getResource().sadd(RedisPicConstant.MENU_PIC_DB_RESOURCE,menu.getIcon());
+        }
     }
 
     /**

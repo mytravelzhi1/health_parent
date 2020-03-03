@@ -13,7 +13,7 @@
         select * from t_menu
         <!--动态sql的条件，必须使用value-->
         <if test="value!=null and value.length>0">
-            where naem = #{value}
+            where name = #{value}
         </if>
     </select>
 

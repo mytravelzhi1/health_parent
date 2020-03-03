@@ -93,4 +93,10 @@ public class OrderSettingServiceImpl implements OrderSettingService {
             orderSettingDao.add(orderSetting);
         }
     }
+
+    @Override
+    //Quatz定时清理预约设置
+    public void clearOrderSetting(String clearTime) {
+        orderSettingDao.clearOrderSetting(clearTime);
+    }
 }

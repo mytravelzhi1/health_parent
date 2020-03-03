@@ -19,4 +19,6 @@ public interface OrderSettingDao {
     OrderSetting findOrderSettingByOrderDate(Date date);
 
     void updateReservationsByOrderDate(Date date);
+
+    void clearOrderSetting(String clearTime);
 }

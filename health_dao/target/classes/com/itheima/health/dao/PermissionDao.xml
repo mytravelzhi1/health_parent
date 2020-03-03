@@ -63,5 +63,4 @@
     <select id="findPermissionTotal" resultType="long">
         select count(*) from t_permission
     </select>
-
 </mapper>

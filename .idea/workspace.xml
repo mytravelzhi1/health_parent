@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="256348c8-2e08-4878-b07c-78588a8698be" name="Default" comment="提交生成的静态页面到版本控制" />
+    <list default="true" id="256348c8-2e08-4878-b07c-78588a8698be" name="Default" comment="添加权限管理静态页面缓存模板文件">
+      <change beforePath="$PROJECT_DIR$/health_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/health_service/pom.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/health_common/target/" />
@@ -45,31 +47,44 @@
     <session id="-392148775">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
-          <entry key="project.open.time.0" value="2" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.closed" value="9" />
+          <entry key="project.open.time.0" value="7" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="ftl" value="1" />
+          <entry key="html" value="2" />
+          <entry key="java" value="6" />
           <entry key="properties" value="1" />
-          <entry key="xml" value="1" />
+          <entry key="xml" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="FTL" value="1" />
+          <entry key="HTML" value="2" />
+          <entry key="JAVA" value="6" />
           <entry key="Properties" value="1" />
-          <entry key="XML" value="1" />
+          <entry key="XML" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="txt" value="14" />
+          <entry key="java" value="4" />
+          <entry key="properties" value="1" />
+          <entry key="txt" value="63" />
+          <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="14" />
+          <entry key="JAVA" value="4" />
+          <entry key="PLAIN_TEXT" value="63" />
+          <entry key="Properties" value="1" />
+          <entry key="XML" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -77,15 +92,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/health_service/src/main/resources/freemarker.properties">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/health_service/src/main/webapp/WEB-INF/ftl/permission_static.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-233">
+              <caret line="263" column="34" selection-start-line="263" selection-start-column="34" selection-end-line="263" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/health_service/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="34" column="43" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/health_jobs/src/main/webapp/WEB-INF/web.xml">
+        <entry file="file://$PROJECT_DIR$/health_web/src/main/webapp/pages/report_member_age.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="-48">
+              <caret line="47" column="34" lean-forward="true" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -146,16 +183,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/health_service/src/main/java/com/itheima/health/service/impl/RoleServiceImpl.java" />
-        <option value="$PROJECT_DIR$/health_service/src/main/java/com/itheima/health/service/impl/PermissionServiceImpl.java" />
-        <option value="$PROJECT_DIR$/health_web/src/main/java/com/itheima/health/controller/RoleContoller.java" />
-        <option value="$PROJECT_DIR$/health_web/src/main/java/com/itheima/health/controller/PermissionContoller.java" />
-        <option value="$PROJECT_DIR$/health_web/src/main/java/com/itheima/health/security/SpringSecurityUserService.java" />
-        <option value="$PROJECT_DIR$/health_interface/src/main/java/com/itheima/health/service/UserService.java" />
         <option value="$PROJECT_DIR$/health_service/src/main/java/com/itheima/health/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/health_dao/src/main/java/com/itheima/health/dao/UserDao.java" />
-        <option value="$PROJECT_DIR$/health_dao/src/main/java/com/itheima/health/dao/PermissionDao.java" />
-        <option value="$PROJECT_DIR$/health_dao/src/main/resources/com/itheima/health/dao/PermissionDao.xml" />
         <option value="$PROJECT_DIR$/health_web/src/main/resources/springmvc.xml" />
         <option value="$PROJECT_DIR$/health_dao/src/main/resources/com/itheima/health/dao/UserDao.xml" />
         <option value="$PROJECT_DIR$/health_web/src/main/resources/spring-security.xml" />
@@ -197,6 +226,14 @@
         <option value="$PROJECT_DIR$/health_web/src/main/webapp/pages/main.html" />
         <option value="$PROJECT_DIR$/health_service/src/main/java/com/itheima/health/service/impl/MenuServiceImpl.java" />
         <option value="$PROJECT_DIR$/health_dao/src/main/resources/applicationContext-dao.xml" />
+        <option value="$PROJECT_DIR$/health_service/src/main/resources/freemarker.properties" />
+        <option value="$PROJECT_DIR$/health_web/src/main/java/com/itheima/health/controller/PermissionContoller.java" />
+        <option value="$PROJECT_DIR$/health_interface/src/main/java/com/itheima/health/service/PermissionService.java" />
+        <option value="$PROJECT_DIR$/health_dao/src/main/java/com/itheima/health/dao/PermissionDao.java" />
+        <option value="$PROJECT_DIR$/health_common/src/main/java/com/itheima/health/constant/MessageConstant.java" />
+        <option value="$PROJECT_DIR$/health_service/src/main/java/com/itheima/health/service/impl/PermissionServiceImpl.java" />
+        <option value="$PROJECT_DIR$/health_dao/src/main/resources/com/itheima/health/dao/PermissionDao.xml" />
+        <option value="$PROJECT_DIR$/health_service/pom.xml" />
       </list>
     </option>
   </component>
@@ -205,7 +242,6 @@
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
-    <annotation-enable>false</annotation-enable>
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
@@ -249,8 +285,9 @@
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="25" />
-    <option name="width" value="1245" />
+    <option name="x" value="-30" />
+    <option name="y" value="250" />
+    <option name="width" value="1325" />
     <option name="height" value="735" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -298,8 +335,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -310,25 +345,25 @@
             <path>
               <item name="health_parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="health_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="health_jobs" type="462c0819:PsiDirectoryNode" />
+              <item name="health_service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="health_parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="health_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="health_jobs" type="462c0819:PsiDirectoryNode" />
+              <item name="health_service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="health_parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="health_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="health_jobs" type="462c0819:PsiDirectoryNode" />
+              <item name="health_service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="health_parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="health_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="health_jobs" type="462c0819:PsiDirectoryNode" />
+              <item name="health_service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
@@ -336,7 +371,7 @@
             <path>
               <item name="health_parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="health_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="health_jobs" type="462c0819:PsiDirectoryNode" />
+              <item name="health_service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
@@ -344,7 +379,7 @@
             <path>
               <item name="health_parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="health_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="health_jobs" type="462c0819:PsiDirectoryNode" />
+              <item name="health_service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
@@ -354,36 +389,11 @@
               <item name="health_parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="health_parent" type="462c0819:PsiDirectoryNode" />
               <item name="health_service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="health_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="health_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="health_service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="health_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="health_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="health_service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="health_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="health_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="health_service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="health_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="health_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="health_service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="ftl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="health_parent" type="b2602c69:ProjectViewProjectNode" />
@@ -393,22 +403,51 @@
             <path>
               <item name="health_parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="health_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="healthmobile_web" type="462c0819:PsiDirectoryNode" />
+              <item name="health_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="health_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="health_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="health_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="health_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="health_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="health_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="health_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="health_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="health_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="MANAGE_IGNORE_FILES_PROPERTY" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="freemarker.&#9;FILE&#9;file://D:/allproject/health_parent/health_service/src/main/resources/freemarker.properties&#10; qin&#9;PSI&#9;JAVA://com.mysql.jdbc.exceptions.MySQLQueryInterruptedException" />
+    <property name="SearchEverywhereHistoryKey" value="Mess&#9;FILE&#9;file://D:/allproject/health_parent/health_common/src/main/java/com/itheima/health/constant/MessageConstant.java&#10;Freemarker&#9;FILE&#9;file://D:/allproject/health_parent/health_service/src/main/resources/freemarker.properties&#10;freemarker.&#9;FILE&#9;file://D:/allproject/health_parent/health_service/src/main/resources/freemarker.properties&#10; qin&#9;PSI&#9;JAVA://com.mysql.jdbc.exceptions.MySQLQueryInterruptedException" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1583222413326" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -417,28 +456,28 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15332031" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\ideaProjects\85\health_parent\health_service\src\main\webapp\WEB-INF" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.itheima.health.utils" />
       <recent name="com.itheima.health.dao" />
       <recent name="com.itheima.health.service" />
       <recent name="com.itheima.health.service.impl" />
       <recent name="com.itheima.health.controller" />
-      <recent name="com.itheima.health.security" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\allproject\health_parent\health_service\src\main\webapp\WEB-INF\ftl" />
+      <recent name="D:\allproject\health_parent\health_service\src\main\resources" />
+      <recent name="D:\allproject\health_parent\health_web\src\main\webapp\pages" />
       <recent name="H:\project85\health_parent\health_dao\src\main\resources\com\itheima\health\dao" />
       <recent name="D:\ideaProjects\85\health_parent\health_web\src\main\webapp\template" />
-      <recent name="D:\ideaProjects\85\health_parent\health_web\src\main\webapp\pages" />
-      <recent name="D:\ideaProjects\85\health_parent\health_web\src\main\webapp\js" />
-      <recent name="D:\ideaProjects\85\health_parent\health_web\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -453,7 +492,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Maven.health_web [tomcat7:run]">
+  <component name="RunManager" selected="Maven.health_jobs [tomcat7:run]">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -505,6 +544,31 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="health_jobs [tomcat7:run]" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="tomcat7:run" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/health_jobs" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
     </configuration>
     <configuration name="health_service [tomcat7:run]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
       <MavenSettings>
@@ -599,6 +663,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Maven.health_jobs [tomcat7:run]" />
       <item itemvalue="JUnit.TestPOI.writeExcel" />
       <item itemvalue="JUnit.TestItext.createPdf" />
       <item itemvalue="Maven.health_service [tomcat7:run]" />
@@ -607,9 +672,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Maven.healthmobile_web [tomcat7:run]" />
         <item itemvalue="Maven.health_web [tomcat7:run]" />
         <item itemvalue="Maven.health_service [tomcat7:run]" />
-        <item itemvalue="Maven.healthmobile_web [tomcat7:run]" />
         <item itemvalue="JUnit.TestItext.createPdf" />
         <item itemvalue="JUnit.TestPOI.writeExcel" />
       </list>
@@ -651,6 +716,12 @@
       <workItem from="1583077060907" duration="1422000" />
       <workItem from="1583102670225" duration="2680000" />
       <workItem from="1583142727479" duration="185000" />
+      <workItem from="1583143018702" duration="4009000" />
+      <workItem from="1583156699868" duration="44000" />
+      <workItem from="1583156768948" duration="2595000" />
+      <workItem from="1583207387092" duration="436000" />
+      <workItem from="1583221522695" duration="957000" />
+      <workItem from="1583222958722" duration="418000" />
     </task>
     <task id="LOCAL-00001" summary="提交从git上下载下来更新好的版本">
       <created>1583037196608</created>
@@ -694,7 +765,21 @@
       <option name="project" value="LOCAL" />
       <updated>1583142823322</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="提交权限管理页面及权限管理缓存功能">
+      <created>1583150235827</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1583150235827</updated>
+    </task>
+    <task id="LOCAL-00008" summary="添加权限管理静态页面缓存模板文件">
+      <created>1583207709065</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1583207709066</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -730,13 +815,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="276191000" />
+    <option name="totallyTimeSpent" value="284650000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26340482" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2855228" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
@@ -746,13 +831,13 @@
       <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32879046" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4036827" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3186969" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" weight="0.4022663" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.16288953" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3297491" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="7" sideWeight="0.50075644" side_tool="true" visible="true" weight="0.407932" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3295082" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50067025" side_tool="true" weight="0.4036827" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286119" />
       <window_info anchor="bottom" id="Spring" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Problems" order="11" />
@@ -764,7 +849,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven Projects" order="4" weight="0.3297587" />
+      <window_info anchor="right" id="Maven Projects" order="4" weight="0.22117962" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
@@ -826,7 +911,9 @@
     <MESSAGE value="提交--一个用户对应多个角色完成版本" />
     <MESSAGE value="提交--一个用户对应多个角色完成版本 去掉多余代码" />
     <MESSAGE value="提交生成的静态页面到版本控制" />
-    <option name="LAST_COMMIT_MESSAGE" value="提交生成的静态页面到版本控制" />
+    <MESSAGE value="提交权限管理页面及权限管理缓存功能" />
+    <MESSAGE value="添加权限管理静态页面缓存模板文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加权限管理静态页面缓存模板文件" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -910,73 +997,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/health_service/src/main/java/com/itheima/health/service/impl/ReportServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="97" column="58" selection-start-line="86" selection-start-column="12" selection-end-line="97" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/health_common/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="176" column="36" selection-start-line="176" selection-start-column="20" selection-end-line="176" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/healthmobile_web/src/main/webapp/pages/orderSuccess.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="70" column="71" selection-start-line="70" selection-start-column="51" selection-end-line="70" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/healthmobile_web/src/main/java/com/itheima/health/controller/OrderMobileController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2346">
-          <caret line="124" column="58" selection-start-line="123" selection-start-column="40" selection-end-line="124" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/health_jobs/src/main/java/com/itheima/health/job/ClearImgJob.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="28" column="51" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/health_interface/src/main/java/com/itheima/health/service/OrderService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/health_dao/src/main/java/com/itheima/health/dao/OrderDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="13" column="16" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/health_service/src/main/java/com/itheima/health/service/impl/SetmealServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2850">
-          <caret line="173" column="42" selection-start-line="173" selection-start-column="42" selection-end-line="173" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/health_dao/src/main/resources/com/itheima/health/dao/OrderDao.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="969">
           <caret line="51" column="87" selection-start-line="51" selection-start-column="68" selection-end-line="51" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/health_common/src/main/java/com/itheima/health/constant/MessageConstant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -986,9 +1010,6 @@
           <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/health_service/src/main/resources/applicationContext-freemarker.xml">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/health_web/src/main/resources/spring-redis.xml">
       <provider selected="true" editor-type-id="text-editor" />
@@ -1074,13 +1095,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/health_web/src/main/java/com/itheima/health/controller/PermissionContoller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/health_web/src/main/java/com/itheima/health/controller/SetmealContoller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-330">
@@ -1115,9 +1129,6 @@
           <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/health_service/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/health_dao/src/main/resources/com/itheima/health/dao/SetmealDao.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -1224,13 +1235,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5377">
-          <caret line="283" column="21" selection-start-line="283" selection-start-column="21" selection-end-line="283" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -1239,12 +1243,101 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/health_service/src/main/resources/freemarker.properties">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="33" lean-forward="true" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/health_jobs/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/health_web/src/main/webapp/pages/permission.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/health_interface/src/main/java/com/itheima/health/service/PermissionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/health_common/src/main/java/com/itheima/health/utils/FreemarkerUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-496" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/health_dao/src/main/java/com/itheima/health/dao/PermissionDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/health_web/src/main/java/com/itheima/health/controller/PermissionContoller.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/health_common/src/main/java/com/itheima/health/constant/MessageConstant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="105" column="75" selection-start-line="105" selection-start-column="75" selection-end-line="105" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/health_service/src/main/java/com/itheima/health/service/impl/PermissionServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2575">
+          <caret line="124" column="34" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/health_dao/src/main/resources/com/itheima/health/dao/PermissionDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="57" column="25" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/health_service/src/main/resources/applicationContext-freemarker.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="19" column="64" lean-forward="true" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/health_service/src/main/webapp/WEB-INF/ftl/permission_static.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-233">
+          <caret line="263" column="34" selection-start-line="263" selection-start-column="34" selection-end-line="263" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/health_service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="34" column="43" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/health_web/src/main/webapp/pages/report_member_age.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-48">
+          <caret line="47" column="34" lean-forward="true" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -1289,7 +1382,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8 (1)</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

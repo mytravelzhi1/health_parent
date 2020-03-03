@@ -15,11 +15,11 @@
     <body class="hold-transition">
         <div id="app">
             <div class="content-header">
-                <h1>统计分析<small>套餐占比</small></h1>
+                <h1>统计分析<small>会员性别占比</small></h1>
                 <el-breadcrumb separator-class="el-icon-arrow-right" class="breadcrumb">
                     <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
                     <el-breadcrumb-item>统计分析</el-breadcrumb-item>
-                    <el-breadcrumb-item>套餐占比</el-breadcrumb-item>
+                    <el-breadcrumb-item>会员性别占比</el-breadcrumb-item>
                 </el-breadcrumb>
             </div>
             <div class="app-container">
@@ -40,11 +40,11 @@
         // 使用刚指定的配置项和数据显示图表。
         //myChart.setOption(option);
 
-        axios.get("/report/getSetmealReport.do").then((res)=>{
+        axios.get("/report/getMemberSexReport.do").then((res)=>{
             // 返回Result(flag,message,data)  data对应Map结构，map结构的key（setmealNames，setmealCount）
             myChart1.setOption({
                                     title : {
-                                        text: '套餐预约占比',
+                                        text: '会员性别占比',
                                         subtext: '传智健康',
                                         x:'center'
                                     },
@@ -55,15 +55,15 @@
                                     legend: {
                                         orient: 'vertical',
                                         left: 'left',
-                                        data: res.data.data.setmealNames
+                                        data: res.data.data.memberSexs
                                     },
                                     series : [
                                         {
-                                            name: '套餐预约占比',
+                                            name: '会员性别占比',
                                             type: 'pie',
                                             radius : '55%',
                                             center: ['50%', '60%'],
-                                            data:res.data.data.setmealCount,
+                                            data:res.data.data.memberSexCount,
                                             itemStyle: {
                                                 emphasis: {
                                                     shadowBlur: 10,

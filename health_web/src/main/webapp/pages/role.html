@@ -398,7 +398,7 @@
                         axios.post("/permission/findAll.do").then(response => {
                             if (response.data.flag) {
                                 //为模型数据赋值，通过VUE数据双向绑定进行信息的回显
-                                this.tableData = response.data.data;
+                                this.tableData = response.data.data.dataList;
                                 //3：查询当前角色包含的所有权限id，用于页面复选框回显
                                 axios.get("/role/findPermissionId.do?id=" + row.id).then(response => {
                                     //将查出的id传给表单中对应双向绑定的复选框

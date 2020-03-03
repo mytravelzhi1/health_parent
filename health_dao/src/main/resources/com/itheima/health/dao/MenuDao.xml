@@ -71,6 +71,6 @@
                      open="(" separator="," close=")">
                 #{item}
             </foreach>
-        )
+        ) order by priority asc
 </select>
 </mapper>

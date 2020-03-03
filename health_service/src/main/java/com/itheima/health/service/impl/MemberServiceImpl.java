@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName MemberServiceImpl
@@ -98,5 +99,19 @@ public class MemberServiceImpl implements MemberService {
         }
         return null;
     }
+
+    @Override
+    public List<Map> findSexCountByMemberSex() {
+
+        List<Map> list =memberDao.findSexCountByMemberSex();
+        return  list;
+    }
+
+    @Override
+    public List<Map> findAgeCountByMemberAge() {
+       return  memberDao.findAgeCountByMemberAge();
+
+    }
+
 
 }

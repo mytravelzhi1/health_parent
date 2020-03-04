@@ -362,7 +362,7 @@
                 // 查询所有的权限，并将查询的结果List<permission> 放置到tableData的模型中
                 axios.post("/permission/findAll.do").then(response => {
                     if (response.data.flag) {
-                        this.tableData = response.data.data
+                        this.tableData = response.data.data.dataList;
                     }
                 }).catch(response => {
                     this.$message.error("没有角色的数据存在！")
